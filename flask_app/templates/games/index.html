@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&display=swap" rel="stylesheet">
+    <title>Number-Bomb Game</title>
+</head>
+
+<body>
+    <div class="main">
+        <nav class="navbar bg-body-tertiary mb-3" data-bs-theme="dark">
+            <div class="container-fluid">
+                <h1 class="welcometitle">Number-Bomb Game!</h1>
+                <a href="/back" class="btn btn-light btn-lg">HOME</a>
+        </nav>
+        <h5 class="briefexplain">*** Enter a number between 1 to 100 ***</h5>
+        <h5 class="briefexplain mb-5">*** You have five chances to figure out the number ***</h5>
+
+        <form action="/guess" method="post" class="form1">
+            <div class="mb-1">
+                <label for="input_num" class="m-3">Take a guess!</label>
+                <input type="number" min="1" max="100" class="form-control-lg m-2 inputbox" name="input_num" required>
+                <button type="submit" value="submitnumber" class="btn btn-outline-warning btn-lg">Bomb?</button>
+            </div>
+            <div class="mx-auto bomb2">
+                <img class="img-bomb2" src="{{url_for('static', filename='img/giphy.gif')}}" alt="bomb2">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
